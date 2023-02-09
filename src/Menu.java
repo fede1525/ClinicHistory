@@ -15,8 +15,8 @@ public class Menu extends JFrame implements ActionListener{
         pan1.add(b1);
         pan1.add(b2);
         pan1.add(b3);
-
         add(pan1,BorderLayout.CENTER);
+        pan1.setVisible(true);
 
         b1.addActionListener(this);
         b2.addActionListener(this);
@@ -24,16 +24,27 @@ public class Menu extends JFrame implements ActionListener{
 
         setTitle("Menu principal");
     }
-    public void ActionPerformed(ActionEvent ae){
-        //AGREGAR SALTO A CADA OPCION DEL MENU
-
+    @Override
+    public void actionPerformed(ActionEvent a){
+        if(a.getSource() == b1){
+            //REDIRECT TO PATIENT INPUT
+        }else{
+            if(a.getSource() == b2){
+                //REDIRECT TO PATIENT SEARCH
+            }else{
+                if(a.getSource() == b3){
+                    //REDIRECT TO THE ENTIRE PATIENT LIST
+                }
+            }
+        }
     }
     public class MainMenu{
         public static void main(String[] args) {
             try{
-                Menu men = new Menu();
-                men.setSize(300,100);
-                men.setVisible(true);
+                Menu men1 = new Menu();
+                men1.setSize(300,100);
+                men1.setVisible(true);
+
             }
             catch(Exception ex){
                 JOptionPane.showMessageDialog(null, ex.getMessage());
